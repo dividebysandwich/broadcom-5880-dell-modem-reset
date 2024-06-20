@@ -1,0 +1,12 @@
+[Unit]
+Description=Modem reset
+After=suspend.target
+
+[Service]
+User=root
+Type=oneshot
+ExecStart=/usr/sbin/modemreset.sh
+TimeoutSec=0
+
+[Install]
+WantedBy=multi-user.target suspend.target
